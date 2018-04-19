@@ -5,7 +5,7 @@
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>a4b7f4b5-8749-4db1-adb6-92da60d8721d</ProjectGuid>
     <DockerLaunchBrowser>True</DockerLaunchBrowser>
-    <DockerServiceUrl>http://localhost:{ServicePort}/api/values</DockerServiceUrl>
+    <DockerServiceUrl>http://localhost:{ServicePort}/docs</DockerServiceUrl>
     <DockerServiceName>picpay</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>

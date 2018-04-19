@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PayPay.Test", "..\PayPay.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicPay.SharedKernel", "..\PicPay.SharedKernel\PicPay.SharedKernel.csproj", "{74CF481D-5BEF-48C5-B444-E4A02225DEF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicPay.LoadCsv", "PicPay.LoadCsv\PicPay.LoadCsv.csproj", "{26BC0A5E-B434-4D8F-8D38-0CFA43DCDB0B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{74CF481D-5BEF-48C5-B444-E4A02225DEF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74CF481D-5BEF-48C5-B444-E4A02225DEF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74CF481D-5BEF-48C5-B444-E4A02225DEF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26BC0A5E-B434-4D8F-8D38-0CFA43DCDB0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26BC0A5E-B434-4D8F-8D38-0CFA43DCDB0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26BC0A5E-B434-4D8F-8D38-0CFA43DCDB0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26BC0A5E-B434-4D8F-8D38-0CFA43DCDB0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
