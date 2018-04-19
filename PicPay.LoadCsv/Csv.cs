@@ -5,13 +5,17 @@ using PicPay.SharedKernel.Models;
 
 namespace PicPay.LoadCsv
 {
+
+    /**
+     * Em um ambiente real, este arquivo nem existiria
+     */
     public class Csv
     {
         public List<User> Load(string location)
         {
             var userList = new List<User>();
             var file = Path.Combine(Path.GetTempPath(), location);
-            using (var streamReader = System.IO.File.OpenText(file))
+            using (var streamReader = File.OpenText(file))
             {
                 while (!streamReader.EndOfStream)
                 {
