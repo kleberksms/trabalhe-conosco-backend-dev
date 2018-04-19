@@ -7,16 +7,17 @@ namespace PicPay.Controllers
     [Route("api/[controller]")]
     public class UsersController : Controller
     {
-        // GET api/values
-        [HttpGet]
-        public IActionResult Get()
+
+        // GET api/users/065d8403-8a8f-484d-b602-9138ff7dedcf
+        [HttpGet("{id}")]
+        public IActionResult Get(string id)
         {
             return Ok();
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public IActionResult Get(string id)
+        // GET /api/users?q=whatever
+        [HttpGet]
+        public IActionResult GetByParams([FromQuery]string q)
         {
             return Ok();
         }
