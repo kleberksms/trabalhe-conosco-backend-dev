@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  picpay:
+    image: picpay
+    build:
+      context: .
+      dockerfile: PicPay/Dockerfile
