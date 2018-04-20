@@ -261,3 +261,7 @@ __pycache__/
 *.pyc
 
 users.csv
+/PayPay.Test/Database/lista_relevancia_1.txt
+/PayPay.Test/Database/lista_relevancia_2.txt
+/PicPay/Database/lista_relevancia_1.txt
+/PicPay/Database/lista_relevancia_2.txt
