@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using PicPay.Repository;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace PicPay
@@ -17,6 +17,8 @@ namespace PicPay
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+
         }
 
         public IConfiguration Configuration { get; }
@@ -25,6 +27,8 @@ namespace PicPay
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddDbContext<PicPayContex>(opt => opt.UseInMemoryDatabase(Configuration.GetConnectionString("memory")));
 
             // Register the Swagger generator, defining one or more Swagger documents
             services.AddSwaggerGen(c =>

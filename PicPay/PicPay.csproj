@@ -21,4 +21,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\PicPay.SharedKernel\PicPay.SharedKernel.csproj" />
+    <ProjectReference Include="..\PicPay.LoadCsv\PicPay.LoadCsv.csproj" />
+  </ItemGroup>
+
 </Project>
