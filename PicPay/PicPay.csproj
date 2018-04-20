@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\PicPay.SharedKernel\PicPay.SharedKernel.csproj" />
     <ProjectReference Include="..\PicPay.LoadCsv\PicPay.LoadCsv.csproj" />
+    <ProjectReference Include="..\PicPay.SharedKernel\PicPay.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>

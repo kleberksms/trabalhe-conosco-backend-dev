@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PicPay", "PicPay\PicPay.csp
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A4B7F4B5-8749-4DB1-ADB6-92DA60D8721D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PayPay.Test", "..\PayPay.Test\PayPay.Test.csproj", "{A17D7E0D-CCC1-40C3-8826-ECFC67C1CC2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PayPay.Test", "PayPay.Test\PayPay.Test.csproj", "{A17D7E0D-CCC1-40C3-8826-ECFC67C1CC2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicPay.SharedKernel", "..\PicPay.SharedKernel\PicPay.SharedKernel.csproj", "{74CF481D-5BEF-48C5-B444-E4A02225DEF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicPay.SharedKernel", "PicPay.SharedKernel\PicPay.SharedKernel.csproj", "{74CF481D-5BEF-48C5-B444-E4A02225DEF8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PicPay.LoadCsv", "PicPay.LoadCsv\PicPay.LoadCsv.csproj", "{26BC0A5E-B434-4D8F-8D38-0CFA43DCDB0B}"
 EndProject
