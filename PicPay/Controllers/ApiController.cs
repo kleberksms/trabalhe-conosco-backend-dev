@@ -74,25 +74,33 @@ namespace PicPay.Controllers
                 });
             }
 
-            var halLinks = new List<Link>();
-            var existPage = result.SelfRouter.Contains("{page}") && result.Paramters.ContainsKey("{page}");
-            if (existPage)
+            var contentLinks = new List<Link>();
+            var embbedLinks = new List<Link>();
+            foreach (var user in (List<UserViewModel>)result.Content)
             {
-                halLinks.Add(new Link("next", result.SelfRouter.Replace("{page}", (Convert.ToInt32(result.Paramters.SingleOrDefault(c => c.Key.Equals("{page}")).Value) + 1).ToString())));
+                embbedLinks.Add(new Link("self", result.ItemRouter.Replace("{id}", user.Id.ToString())));
             }
 
             var self = result.SelfRouter;
+            var next = result.SelfRouter;
             foreach (var kp in result.Paramters)
             {
+                if (kp.Key.Equals("{page}"))
+                {
+                    next = self.Replace(kp.Key, (Convert.ToInt32(kp.Value) + 1).ToString());
+                }
                 self = self.Replace(kp.Key, kp.Value);
             }
 
+            contentLinks.Add(new Link("self", self));
+            contentLinks.Add(new Link("next", next));
+
             return this.HAL(
                 new { total = result.Total, perPage = result.TotalPerPage },
-                new Link("self", self),
+                contentLinks,
                 result.ContentListName,
-                result.Content as List<UserViewModel>,
-                halLinks);
+                (List<UserViewModel>) result.Content,
+                embbedLinks);
         }
 
     }
