@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Custom Stylesheet */
+
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+    color: #444;
+    position: relative;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 175px;
+    padding: 13px 0 13px 60px;
+    z-index: 1000;
+    fill: #21c25e;
+}
+
+p {
+    line-height: 2rem;
+}
+
+.sidenav-trigger {
+    color: #21c25e;
+}
+
+.picpay-text {
+    color: #21c25e !important;
+}
+
+.picpay {
+    background-color: #21c25e !important;
+}
+
+.parallax-container {
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255, 255, 255, .9);
+}
+
+.parallax-container .section {
+    width: 100%;
+}
+
+@media only screen and (max-width: 992px) {
+    .parallax-container .section {
+        position: absolute;
+        top: 40%;
+    }
+    #index-banner .section {
+        top: 10%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #index-banner .section {
+        top: 0;
+    }
+}
+
+.icon-block {
+    padding: 0 15px;
+}
+
+.icon-block .material-icons {
+    font-size: inherit;
+}
+
+footer.page-footer {
+    margin: 0;
+}
