@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
+using PicPay.Application.ViewModel;
 using PicPay.Application.ViewModel.Post;
 
 namespace PicPay.Controllers
@@ -10,7 +12,12 @@ namespace PicPay.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
-            return Response();
+            var response = new Application.ViewModel.Get.UserViewModel{
+                    Id = Guid.NewGuid(),
+                    Nome = "Foo",
+                    Username = "Bar"
+            };
+            return Response(response);
         }
 
         // GET /api/users/q/{paramter-query}/page/{page}

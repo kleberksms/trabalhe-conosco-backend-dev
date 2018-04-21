@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http;
+using PicPay.Application.ViewModel.HAL;
 
 namespace PicPay.Controllers
 {
@@ -29,7 +30,7 @@ namespace PicPay.Controllers
             _modelStateErrors.Add(erroMsg);
         }
 
-        protected new IActionResult Response(HttpMethod method = HttpMethod.Get, object result = null)
+        protected new IActionResult Response(object result = null)
         {
             if (_modelStateErrors.Any())
             {
@@ -46,31 +47,27 @@ namespace PicPay.Controllers
                 data = result
             };
 
-            switch (method)
+            return Ok(data);
+        }
+
+        protected new IActionResult Response(ListItemsInHalJsonViewModel result = null)
+        {
+            if (_modelStateErrors.Any())
             {
-                case HttpMethod.Get when result == null:
-                    return StatusCode(204);
-                case HttpMethod.Post:
-                    return StatusCode(201, data);
-                case HttpMethod.Put:
-                    return Ok(data);
-                case HttpMethod.Delete:
-                    return Ok(data);
-                case HttpMethod.Head:
-                    return Ok(data);
-                case HttpMethod.Trace:
-                    return Ok(data);
-                case HttpMethod.Patch:
-                    return Ok(data);
-                case HttpMethod.Connect:
-                    return Ok(data);
-                case HttpMethod.Options:
-                    return Ok(data);
-                case HttpMethod.Custom:
-                    return Ok(data);
-                default:
-                    return Ok(data);
+                return BadRequest(new
+                {
+                    success = false,
+                    errors = _modelStateErrors
+                });
             }
+
+            var data = new
+            {
+                success = true,
+                data = result
+            };
+
+            return Ok(data);
         }
     }
 }
