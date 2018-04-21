@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using PicPay.Application.ViewModel;
+using PicPay.Application.ViewModel.HAL;
 using PicPay.Application.ViewModel.Post;
 
 namespace PicPay.Controllers
@@ -12,19 +13,43 @@ namespace PicPay.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(string id)
         {
-            var response = new Application.ViewModel.Get.UserViewModel{
-                    Id = Guid.NewGuid(),
-                    Nome = "Foo",
-                    Username = "Bar"
+            var response = new Application.ViewModel.Get.UserViewModel
+            {
+                Id = Guid.NewGuid(),
+                Nome = "Foo",
+                Username = "Bar"
             };
-            return Response(response);
+            var links = new Dictionary<string, string> { { "self", $"/api/users/{id}" } };
+            return Response(response, links);
         }
 
         // GET /api/users/q/{paramter-query}/page/{page}
         [HttpGet, Route("q/{query}/page/{page}")]
         public IActionResult GetByParams(string query, int page)
         {
-            return Response();
+            var hal = new ListItemsInHalJsonViewModel
+            {
+                Content = new List<Application.ViewModel.Get.UserViewModel>
+                {
+                    new Application.ViewModel.Get.UserViewModel{
+                        Id = Guid.NewGuid(),
+                        Nome = "Foo",
+                        Username = "Bar"
+                    },
+                    new Application.ViewModel.Get.UserViewModel{
+                        Id = Guid.NewGuid(),
+                        Nome = "Foo",
+                        Username = "Bar"
+                    }
+                },
+                Total = 2,
+                TotalPerPage = 2,
+                ContentListName = "usuarios",
+                SelfRouter = "api/users/q/{query}/page/{page}",
+                ItemRouter = "api/users/{id}",
+                Paramters = new Dictionary<string, string> { { "{query}", query }, { "{page}", page.ToString() } }
+            };
+            return Response(hal);
         }
 
         [HttpPost]
@@ -48,7 +73,7 @@ namespace PicPay.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(string id)
         {
-            ModelState.AddModelError("NI","Função não necessária para api de teste seletivo Pic Pay");
+            ModelState.AddModelError("NI", "Função não necessária para api de teste seletivo Pic Pay");
             NotifyModelStateErrors();
             return Response();
         }
