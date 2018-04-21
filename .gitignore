@@ -265,3 +265,47 @@ users.csv
 /PayPay.Test/Database/lista_relevancia_2.txt
 /PicPay/Database/lista_relevancia_1.txt
 /PicPay/Database/lista_relevancia_2.txt
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/front/dist
+/front/tmp
+/front/out-tsc
+
+# dependencies
+/front/node_modules
+
+# IDEs and editors
+/front/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/front/.sass-cache
+/front/connect.lock
+/front/coverage
+/front/libpeerconnection.log
+npm-debug.log
+testem.log
+/front/typings
+
+# e2e
+/front/e2e/*.js
+/front/e2e/*.map
+
+# System Files
+.DS_Store
+Thumbs.db
+
