@@ -21,6 +21,10 @@ nav .brand-logo {
     fill: #21c25e;
 }
 
+.heavy {
+    font-weight: 900;
+}
+
 p {
     line-height: 2rem;
 }

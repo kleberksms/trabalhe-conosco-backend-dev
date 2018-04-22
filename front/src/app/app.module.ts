@@ -11,7 +11,8 @@ import { DefaultComponent } from './default/default.component';
 import { LoginComponent } from './login/login.component';
 import { UsersComponent } from './users/users.component';
 
-
+import { AuthGuard } from './_guards/auth.guard';
+import { routing } from './app.routing';
 
 
 @NgModule({
@@ -23,9 +24,11 @@ import { UsersComponent } from './users/users.component';
   ],
   imports: [
     BrowserModule,
-    MaterializeModule
+    MaterializeModule,
+    routing
   ],
   providers: [
+    AuthGuard,
     AuthService,
     CoreService,
     UserService,

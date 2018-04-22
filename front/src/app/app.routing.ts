@@ -9,8 +9,6 @@ import { UsersComponent } from './users/users.component';
 
 const APP_ROUTES: Routes = [
     { path: '', component: DefaultComponent, canActivate: [AuthGuard] },
-    { path: '/users/:id', component: UsersComponent, canActivate: [AuthGuard] },
-    { path: '/users/page/:page', component: UsersComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
   // otherwise redirect to home
   { path: '**', redirectTo: '' }
