@@ -5,7 +5,7 @@ import { AuthService } from './../_services/auth.service';
 
 
 @Component({
-  moduleId: module.id,
+  selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.authService.userIsAuthenticatedEmitter.emit(true);
+    this.authService.login();
   }
 
   logout() {

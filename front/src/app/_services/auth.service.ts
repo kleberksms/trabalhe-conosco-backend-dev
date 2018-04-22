@@ -8,13 +8,18 @@ import { UserService } from './user.service';
 export class AuthService extends CoreService<Auth>{
 
   public userIsAuthenticatedEmitter = new EventEmitter();
-  
-  constructor(private userService:UserService) {
+  public 
+
+  constructor(private userService: UserService) {
     super();
   }
 
-  logout(){
+  login() {
+    this.userIsAuthenticatedEmitter.emit(true);
+  }
 
+  logout() {
+    this.userIsAuthenticatedEmitter.emit(false);
   }
 
 }

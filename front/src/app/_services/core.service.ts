@@ -7,6 +7,8 @@ import { ICoreService } from './../_interfaces/icore.service';
 @Injectable()
 export class CoreService<T> implements ICoreService<T> {
 
+  private headers: Headers;
+
   constructor() { }
 
   create(obj: T): Observable<any> {
@@ -33,6 +35,11 @@ export class CoreService<T> implements ICoreService<T> {
   count(): Observable<number> {
     throw new Error("Method not implemented.");
   }
-  
+
+  protected handleError(error: any) {
+    const errMsg = (error.message) ? error.message :
+      error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+    return Observable.throw(errMsg);
+  }
 
 }

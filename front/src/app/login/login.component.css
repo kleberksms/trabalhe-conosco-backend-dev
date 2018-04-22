@@ -1,0 +1,30 @@
+.login {
+    color: #21c25e !important;
+    position: relative;
+}
+.login-label{
+    position: absolute;
+    float: right
+}
+.username{
+    right: 29.5rem;
+}
+.senha{
+    right: 12.5rem;
+}
+.input-login{
+    right: 17rem;
+    line-height: 20px;
+    top: 23px;
+}
+.input-senha{
+    right: 0rem;
+    line-height: 20px;
+    top: 23px;
+}
+.login-input{
+    width: 12rem;
+    border-bottom: #21c25e 1px solid;
+    position: absolute;
+    float: right;
+}

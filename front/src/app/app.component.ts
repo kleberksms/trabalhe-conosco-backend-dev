@@ -1,3 +1,4 @@
+import { AuthService } from './_services/auth.service';
 import { Component, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
@@ -7,11 +8,15 @@ import { Component, OnInit, EventEmitter } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   title = 'app';
+  isAuthenticated = false;
 
-  constructor() {
+  constructor(private authService: AuthService) {
   }
-  public ngOnInit()
-  {
+  public ngOnInit() {
+    this.authService.userIsAuthenticatedEmitter.subscribe(c => {
+      this.isAuthenticated = c;
+    },
+      (error) => console.log(error));
   }
 
 }
